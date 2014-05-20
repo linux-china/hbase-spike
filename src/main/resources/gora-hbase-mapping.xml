@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gora-orm>
+    <table name="user">
+        <family name="cf"/>
+    </table>
+    <class name="org.apache.gora.generated.UserGora" keyClass="java.lang.String" table="user">
+        <field name="nick" family="cf" qualifier="nick"/>
+        <field name="timestamp" family="cf" qualifier="timestamp"/>
+        <field name="email" family="cf" qualifier="email"/>
+        <field name="password" family="cf" qualifier="password"/>
+        <field name="status" family="cf" qualifier="status"/>
+    </class>
+</gora-orm>
