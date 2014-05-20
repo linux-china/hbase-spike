@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hbaseConfiguration" class="org.springframework.data.hadoop.hbase.HbaseConfigurationFactoryBean">
+        <property name="zkQuorum" value="192.168.33.33"/>
+        <property name="zkPort" value="2181"/>
+        <property name="properties">
+            <map>
+                <!--if this property is false, please use DataStore.flush() -->
+                <entry key="hbase.client.autoflush.default" value="true"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="htemplate" class="org.springframework.data.hadoop.hbase.HbaseTemplate">
+        <property name="configuration" ref="hbaseConfiguration"/>
+    </bean>
+    <bean id="userStore" class="org.apache.gora.store.DataStoreFactory" factory-method="getDataStore">
+        <constructor-arg type="java.lang.Class" value="java.lang.String"/>
+        <constructor-arg type="java.lang.Class" value="org.apache.gora.generated.UserGora"/>
+        <constructor-arg ref="hbaseConfiguration"/>
+    </bean>
+    <!--JPA: entity manager factory-->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="demo_pu"/>
+    </bean>
+    <bean id="userManager" class="org.mvnsearch.hbase.impl.UserManagerImpl">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+</beans>
