@@ -16,6 +16,7 @@
         <hbase.version>0.94.18</hbase.version>
         <spring.version>3.0.7.RELEASE</spring.version>
         <gora.version>0.4</gora.version>
+        <kundera.version>2.11.1</kundera.version>
     </properties>
 
     <build>
@@ -67,14 +68,14 @@
         </dependency>
         <!--kundera-->
         <dependency>
-            <groupId>com.impetus</groupId>
-            <artifactId>kundera</artifactId>
-            <version>2.9.1</version>
+            <groupId>com.impetus.kundera.core</groupId>
+            <artifactId>kundera-core</artifactId>
+            <version>${kundera.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.impetus.client</groupId>
+            <groupId>com.impetus.kundera.client</groupId>
             <artifactId>kundera-hbase</artifactId>
-            <version>2.9</version>
+            <version>${kundera.version}</version>
         </dependency>
         <!--Gora-->
         <dependency>
