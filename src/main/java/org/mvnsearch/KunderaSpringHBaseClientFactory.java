@@ -29,7 +29,7 @@ import java.util.Map;
 public class KunderaSpringHBaseClientFactory extends HBaseClientFactory implements ApplicationContextAware {
 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.conf = applicationContext.getBean(HBaseConfiguration.class);
+        conf = applicationContext.getBean(HBaseConfiguration.class);
     }
 
     /**
@@ -40,7 +40,7 @@ public class KunderaSpringHBaseClientFactory extends HBaseClientFactory implemen
     /**
      * The conf.
      */
-    private HBaseConfiguration conf;
+    private static HBaseConfiguration conf;
 
     /**
      * The h table pool.
