@@ -4,10 +4,11 @@ HBase的Demo项目，包括HBase原生API，Gora，Kundera和Spring Hadoop几者
 
 ### 说明
 
-* HBase API
-* Gora: 代码生成方式操作HBase
-* Spring Hadoop: 通过HBase Template方式操作
-* Kundera: JPA方式操作HBase
+* HBase API http://hbase.apache.org/0.94/apidocs/index.html
+* Gora: 代码生成方式操作HBase, http://gora.apache.org/
+* Spring Hadoop: 通过HBase Template方式操作, http://projects.spring.io/spring-hadoop/
+* Kundera: JPA方式操作HBase, https://github.com/impetus-opensource/Kundera
+* Phoenix: JDBC方式操作HBase, http://phoenix.incubator.apache.org/
 
 ### Todo
 
