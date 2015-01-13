@@ -17,4 +17,10 @@ HBase的Demo项目，包括HBase原生API，Gora，Kundera和Spring Hadoop几者
 
 ### 连接远程hbase
 
-       HBASE_OPTS="-Dhbase.zookeeper.quorum='dev.mvnsearch.net:2181'" ./hbase shell
+       docker exec -it container_name /opt/hbase/hbase-0.94.15-cdh4.7.0/bin/hbase shell
+
+然后执行表创建：
+
+     > create 'user', 'cf'
+     > put 'user', '1', 'cf:nick', 'jacky'
+     > scan 'user'
