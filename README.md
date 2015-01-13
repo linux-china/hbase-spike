@@ -14,3 +14,7 @@ HBase的Demo项目，包括HBase原生API，Gora，Kundera和Spring Hadoop几者
 
 * Gora的bytes to object逻辑提前
 * Kundera使用Spring管理的HBase配置和连接
+
+### 连接远程hbase
+
+       HBASE_OPTS="-Dhbase.zookeeper.quorum='dev.mvnsearch.net:2181'" ./hbase shell
