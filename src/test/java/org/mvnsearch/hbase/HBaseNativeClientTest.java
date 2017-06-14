@@ -24,7 +24,7 @@ public class HBaseNativeClientTest {
     @BeforeClass
     public static void setUp() throws Exception {
         Configuration conf = HBaseConfiguration.create();
-        conf.set("hbase.zookeeper.quorum", "192.168.33.33");
+        conf.set("hbase.zookeeper.quorum", "localhost");
         userTable = new HTable(conf, "user");
     }
 
