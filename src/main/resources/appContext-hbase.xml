@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="hbaseConfiguration" class="org.springframework.data.hadoop.hbase.HbaseConfigurationFactoryBean">
-        <property name="zkQuorum" value="192.168.33.33"/>
+        <property name="zkQuorum" value="localhost"/>
         <property name="zkPort" value="2181"/>
         <property name="properties">
             <map>
